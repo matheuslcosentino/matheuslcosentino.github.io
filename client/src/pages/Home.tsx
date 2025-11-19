@@ -209,7 +209,7 @@ export default function Home() {
                 <div className="relative group">
                   <div className="absolute -inset-1 bg-gradient-to-r from-primary to-blue-500 rounded-full blur opacity-75 group-hover:opacity-100 transition duration-300"></div>
                   <img 
-                    src="/profile.jpg" 
+                    src={`${import.meta.env.BASE_URL}profile.jpg`} 
                     alt="Matheus Lopes" 
                     className="relative w-32 h-32 md:w-40 md:h-40 rounded-full object-cover border-4 border-background shadow-2xl"
                   />
