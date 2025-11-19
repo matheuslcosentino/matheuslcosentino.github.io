@@ -15172,6 +15172,7 @@ function pa({
                 size: 'sm',
                 className:
                   'text-foreground border-border hover:bg-card/50 hover:border-primary/30',
+                onClick: () => (f ? window.open(f, '_blank') : null),
                 children: [
                   v.jsx(g0, {
                     'data-loc': 'client\\src\\components\\ProjectCard.tsx:81',
@@ -15237,7 +15238,7 @@ function G0() {
     status: "Em Desenvolvimento",
     },
     {
-    title: "Horror Storie Folks",
+    title: "Horror Story Folks",
     description:
       "Jogo de horror independente em desenvolvimento pela UF Team. Focado em resolução de enigmas e mecânicas de sobrevivência.",
     role: "Gameplay Programmer",
@@ -15473,7 +15474,7 @@ function G0() {
                           v.jsx('h3', {
                             'data-loc': 'client\\src\\pages\\Home.tsx:180',
                             className: 'text-2xl font-bold',
-                            children: '3 Projetos',
+                            children: '4 Projetos',
                           }),
                           v.jsx('p', {
                             'data-loc': 'client\\src\\pages\\Home.tsx:181',
@@ -15910,46 +15911,9 @@ function G0() {
                 v.jsx('div', {
                   'data-loc': 'client\\src\\pages\\Home.tsx:349',
                   className: 'md:col-span-2 lg:col-span-2',
-                  children: v.jsxs('div', {
+                  children: v.jsx(pa, {
                     'data-loc': 'client\\src\\pages\\Home.tsx:350',
-                    className:
-                      'h-full bg-gradient-to-br from-primary/20 to-blue-500/20 backdrop-blur-xl border border-primary/30 rounded-2xl p-8 flex flex-col items-center justify-center text-center hover:border-primary/50 transition-all group',
-                    children: [
-                      v.jsx(nl, {
-                        'data-loc': 'client\\src\\pages\\Home.tsx:351',
-                        className:
-                          'w-16 h-16 text-primary mb-4 group-hover:scale-110 transition-transform',
-                      }),
-                      v.jsx('h3', {
-                        'data-loc': 'client\\src\\pages\\Home.tsx:352',
-                        className: 'text-2xl font-bold mb-3',
-                        children: 'Mais projetos em breve!',
-                      }),
-                      v.jsx('p', {
-                        'data-loc': 'client\\src\\pages\\Home.tsx:353',
-                        className: 'text-muted-foreground mb-6 max-w-md',
-                        children:
-                          'Estou sempre trabalhando em novos projetos e participando de Game Jams. Acompanhe meu GitHub para ver as novidades.',
-                      }),
-                      v.jsxs(ct, {
-                        'data-loc': 'client\\src\\pages\\Home.tsx:356',
-                        variant: 'outline',
-                        className:
-                          'border-primary text-primary hover:bg-primary hover:text-primary-foreground',
-                        onClick: () =>
-                          window.open(
-                            'https://github.com/matheuslcosentino',
-                            '_blank',
-                          ),
-                        children: [
-                          v.jsx(Wd, {
-                            'data-loc': 'client\\src\\pages\\Home.tsx:361',
-                            className: 'w-4 h-4 mr-2',
-                          }),
-                          'Ver GitHub',
-                        ],
-                      }),
-                    ],
+                    ...x[3],
                   }),
                 }),
               ],

@@ -37,6 +37,7 @@ export default function Home() {
       image: "/game-developer-portfolio/project1.png",
       tags: ["Unity", "C#", "Game Jam", "Psychological Horror"],
       link: "https://unholysaintstudios.itch.io/delirium",
+      trailerUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
       status: "Concluído",
     },
     {
@@ -47,6 +48,7 @@ export default function Home() {
       image: "/game-developer-portfolio/project2.png",
       tags: ["Unity", "C#", "Game Jam", "Narrative Design"],
       link: "https://uf-team.itch.io/sombra-das-memorias",
+      trailerUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
       status: "Concluído",
     },
     {
@@ -57,17 +59,19 @@ export default function Home() {
       image: "/game-developer-portfolio/project3.jpg",
       tags: ["Unity", "C#", "VR"],
       link: "https://uf-team.itch.io/visitors",
+      trailerUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
       status: "Em Desenvolvimento",
     },
     {
-    title: "Horror Storie Folks",
-    description:
-      "Jogo de horror independente em desenvolvimento pela UF Team. Focado em resolução de enigmas e mecânicas de sobrevivência.",
-    role: "Gameplay Programmer",
-    image: "/game-developer-portfolio/project4.jpg",
-    tags: ["Unity", "C#", "Horror", "Puzzle"],
-    link: "https://uf-team.itch.io/horrorstoryfolks",
-    status: "Em Desenvolvimento",
+      title: "Horror Story Folks",
+      description:
+        "Jogo de horror independente em desenvolvimento pela UF Team. Focado em resolução de enigmas e mecânicas de sobrevivência.",
+      role: "Gameplay Programmer",
+      image: "/game-developer-portfolio/project4.jpg",
+      tags: ["Unity", "C#", "Horror", "Puzzle"],
+      link: "https://uf-team.itch.io/horrorstoryfolks",
+      trailerUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+      status: "Em Desenvolvimento",
     },
   ];
 
@@ -187,7 +191,7 @@ export default function Home() {
                   <div className="w-16 h-16 bg-primary/30 rounded-2xl flex items-center justify-center">
                     <Code className="w-8 h-8 text-primary" />
                   </div>
-                  <h3 className="text-2xl font-bold">3 Projetos</h3>
+                  <h3 className="text-2xl font-bold">4 Projetos</h3>
                   <p className="text-muted-foreground">Game Jams vencidas e jogos publicados</p>
                 </div>
               </div>
@@ -355,23 +359,9 @@ export default function Home() {
               <ProjectCard {...projects[2]} />
             </div>
 
-            {/* Call to action card */}
+            {/* Fourth project */}
             <div className="md:col-span-2 lg:col-span-2">
-              <div className="h-full bg-gradient-to-br from-primary/20 to-blue-500/20 backdrop-blur-xl border border-primary/30 rounded-2xl p-8 flex flex-col items-center justify-center text-center hover:border-primary/50 transition-all group">
-                <Gamepad2 className="w-16 h-16 text-primary mb-4 group-hover:scale-110 transition-transform" />
-                <h3 className="text-2xl font-bold mb-3">Mais projetos em breve!</h3>
-                <p className="text-muted-foreground mb-6 max-w-md">
-                  Estou sempre trabalhando em novos projetos e participando de Game Jams. Acompanhe meu GitHub para ver as novidades.
-                </p>
-                <Button
-                  variant="outline"
-                  className="border-primary text-primary hover:bg-primary hover:text-primary-foreground"
-                  onClick={() => window.open("https://github.com/matheuslcosentino", "_blank")}
-                >
-                  <Github className="w-4 h-4 mr-2" />
-                  Ver GitHub
-                </Button>
-              </div>
+              <ProjectCard {...projects[3]} />
             </div>
           </div>
         </div>
