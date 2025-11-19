@@ -32,21 +32,21 @@ export default function Home() {
     {
       title: "Delirium",
       description:
-        "Jogo de horror psicológico desenvolvido em Game Jam, explorando mecânicas de sanidade mental e atmosfera perturbadora.",
+        "Jogo de horror psicológico desenvolvido em TCC (Trabalho de Conclusão de Curso), explorando mecânicas de sanidade mental e atmosfera perturbadora.",
       role: "Lead Programmer",
-      image: "/project1.png",
+      image: "/game-developer-portfolio/project1.png",
       tags: ["Unity", "C#", "Game Jam", "Psychological Horror"],
-      link: "https://github.com/matheuslcosentino",
+      link: "https://unholysaintstudios.itch.io/delirium",
       status: "Concluído",
     },
     {
       title: "Shadow of Memories",
       description:
         "Projeto desenvolvido em Game Jam, explorando mecânicas de memória e atmosfera sombria com narrativa não-linear.",
-      role: "Programmer",
-      image: "/project2.png",
+      role: "Gameplay Programmer",
+      image: "/game-developer-portfolio/project2.png",
       tags: ["Unity", "C#", "Game Jam", "Narrative Design"],
-      link: "https://github.com/matheuslcosentino",
+      link: "https://uf-team.itch.io/sombra-das-memorias",
       status: "Concluído",
     },
     {
@@ -54,10 +54,20 @@ export default function Home() {
       description:
         "Jogo de horror independente focado em resolução de enigmas e mecânicas de sobrevivência em ambiente claustrofóbico.",
       role: "Gameplay Programmer",
-      image: "/project3.jpg",
-      tags: ["Unity", "C#", "Horror", "Puzzle"],
-      link: "https://github.com/matheuslcosentino",
+      image: "/game-developer-portfolio/project3.jpg",
+      tags: ["Unity", "C#", "VR"],
+      link: "https://uf-team.itch.io/visitors",
       status: "Em Desenvolvimento",
+    },
+    {
+    title: "Horror Storie Folks",
+    description:
+      "Jogo de horror independente em desenvolvimento pela UF Team. Focado em resolução de enigmas e mecânicas de sobrevivência.",
+    role: "Gameplay Programmer",
+    image: "/game-developer-portfolio/project4.jpg",
+    tags: ["Unity", "C#", "Horror", "Puzzle"],
+    link: "https://uf-team.itch.io/horrorstoryfolks",
+    status: "Em Desenvolvimento",
     },
   ];
 
