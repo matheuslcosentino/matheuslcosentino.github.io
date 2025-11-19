@@ -386,20 +386,9 @@ export default function Home() {
             <div className="w-24 h-1 bg-gradient-to-r from-transparent via-primary to-transparent mx-auto mt-6" />
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-6">
             <a
-              href="mailto:contato@example.com"
-              className="group bg-gradient-to-br from-card/80 to-card/40 backdrop-blur-xl border border-border/50 rounded-2xl p-6 hover:border-primary/50 hover:shadow-lg hover:shadow-primary/10 transition-all"
-            >
-              <div className="w-12 h-12 bg-primary/20 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                <Mail className="w-6 h-6 text-primary" />
-              </div>
-              <h3 className="text-lg font-bold mb-2">Email</h3>
-              <p className="text-sm text-muted-foreground">Envie uma mensagem</p>
-            </a>
-
-            <a
-              href="https://linkedin.com"
+              href="https://linkedin.com/in/matheus-cosentino/"
               target="_blank"
               rel="noopener noreferrer"
               className="group bg-gradient-to-br from-card/80 to-card/40 backdrop-blur-xl border border-border/50 rounded-2xl p-6 hover:border-primary/50 hover:shadow-lg hover:shadow-primary/10 transition-all"
@@ -425,7 +414,18 @@ export default function Home() {
             </a>
 
             <a
-              href="https://instagram.com"
+              href="mailto:matheuslopescosentino@hotmail.com"
+              className="group bg-gradient-to-br from-card/80 to-card/40 backdrop-blur-xl border border-border/50 rounded-2xl p-6 hover:border-primary/50 hover:shadow-lg hover:shadow-primary/10 transition-all"
+            >
+              <div className="w-12 h-12 bg-primary/20 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                <Mail className="w-6 h-6 text-primary" />
+              </div>
+              <h3 className="text-lg font-bold mb-2">Email</h3>
+              <p className="text-sm text-muted-foreground">Envie uma mensagem</p>
+            </a>
+
+            <a
+              href="https://instagram.com/matheus.cosentino"
               target="_blank"
               rel="noopener noreferrer"
               className="group bg-gradient-to-br from-card/80 to-card/40 backdrop-blur-xl border border-border/50 rounded-2xl p-6 hover:border-primary/50 hover:shadow-lg hover:shadow-primary/10 transition-all"
@@ -438,7 +438,7 @@ export default function Home() {
             </a>
 
             <a
-              href="https://wa.me/"
+              href="https://wa.me/5547992230328"
               target="_blank"
               rel="noopener noreferrer"
               className="group bg-gradient-to-br from-card/80 to-card/40 backdrop-blur-xl border border-border/50 rounded-2xl p-6 hover:border-primary/50 hover:shadow-lg hover:shadow-primary/10 transition-all"
@@ -449,14 +449,6 @@ export default function Home() {
               <h3 className="text-lg font-bold mb-2">WhatsApp</h3>
               <p className="text-sm text-muted-foreground">Converse diretamente</p>
             </a>
-
-            <div className="group bg-gradient-to-br from-primary/20 to-blue-500/20 backdrop-blur-xl border border-primary/30 rounded-2xl p-6 hover:border-primary/50 transition-all">
-              <div className="w-12 h-12 bg-primary/30 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                <Gamepad2 className="w-6 h-6 text-primary" />
-              </div>
-              <h3 className="text-lg font-bold mb-2">Discord</h3>
-              <p className="text-sm text-muted-foreground">Junte-se à comunidade</p>
-            </div>
           </div>
         </div>
       </section>

@@ -16029,11 +16029,13 @@ function G0() {
               }),
               v.jsxs('div', {
                 'data-loc': 'client\\src\\pages\\Home.tsx:389',
-                className: 'grid md:grid-cols-2 lg:grid-cols-3 gap-6',
+                className: 'grid md:grid-cols-2 lg:grid-cols-5 gap-6',
                 children: [
                   v.jsxs('a', {
                     'data-loc': 'client\\src\\pages\\Home.tsx:390',
-                    href: 'mailto:contato@example.com',
+                    href: 'https://linkedin.com/in/matheus-cosentino/',
+                    target: '_blank',
+                    rel: 'noopener noreferrer',
                     className:
                       'group bg-gradient-to-br from-card/80 to-card/40 backdrop-blur-xl border border-border/50 rounded-2xl p-6 hover:border-primary/50 hover:shadow-lg hover:shadow-primary/10 transition-all',
                     children: [
@@ -16041,7 +16043,7 @@ function G0() {
                         'data-loc': 'client\\src\\pages\\Home.tsx:394',
                         className:
                           'w-12 h-12 bg-primary/20 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform',
-                        children: v.jsx(p0, {
+                        children: v.jsx(f0, {
                           'data-loc': 'client\\src\\pages\\Home.tsx:395',
                           className: 'w-6 h-6 text-primary',
                         }),
@@ -16049,18 +16051,18 @@ function G0() {
                       v.jsx('h3', {
                         'data-loc': 'client\\src\\pages\\Home.tsx:397',
                         className: 'text-lg font-bold mb-2',
-                        children: 'Email',
+                        children: 'LinkedIn',
                       }),
                       v.jsx('p', {
                         'data-loc': 'client\\src\\pages\\Home.tsx:398',
                         className: 'text-sm text-muted-foreground',
-                        children: 'Envie uma mensagem',
+                        children: 'Conecte-se comigo',
                       }),
                     ],
                   }),
                   v.jsxs('a', {
                     'data-loc': 'client\\src\\pages\\Home.tsx:401',
-                    href: 'https://linkedin.com',
+                    href: 'https://github.com/matheuslcosentino',
                     target: '_blank',
                     rel: 'noopener noreferrer',
                     className:
@@ -16070,7 +16072,7 @@ function G0() {
                         'data-loc': 'client\\src\\pages\\Home.tsx:407',
                         className:
                           'w-12 h-12 bg-primary/20 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform',
-                        children: v.jsx(f0, {
+                        children: v.jsx(Wd, {
                           'data-loc': 'client\\src\\pages\\Home.tsx:408',
                           className: 'w-6 h-6 text-primary',
                         }),
@@ -16078,20 +16080,18 @@ function G0() {
                       v.jsx('h3', {
                         'data-loc': 'client\\src\\pages\\Home.tsx:410',
                         className: 'text-lg font-bold mb-2',
-                        children: 'LinkedIn',
+                        children: 'GitHub',
                       }),
                       v.jsx('p', {
                         'data-loc': 'client\\src\\pages\\Home.tsx:411',
                         className: 'text-sm text-muted-foreground',
-                        children: 'Conecte-se comigo',
+                        children: 'Veja meus projetos',
                       }),
                     ],
                   }),
                   v.jsxs('a', {
                     'data-loc': 'client\\src\\pages\\Home.tsx:414',
-                    href: 'https://github.com/matheuslcosentino',
-                    target: '_blank',
-                    rel: 'noopener noreferrer',
+                    href: 'mailto:matheuslopescosentino@hotmail.com',
                     className:
                       'group bg-gradient-to-br from-card/80 to-card/40 backdrop-blur-xl border border-border/50 rounded-2xl p-6 hover:border-primary/50 hover:shadow-lg hover:shadow-primary/10 transition-all',
                     children: [
@@ -16099,7 +16099,7 @@ function G0() {
                         'data-loc': 'client\\src\\pages\\Home.tsx:420',
                         className:
                           'w-12 h-12 bg-primary/20 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform',
-                        children: v.jsx(Wd, {
+                        children: v.jsx(p0, {
                           'data-loc': 'client\\src\\pages\\Home.tsx:421',
                           className: 'w-6 h-6 text-primary',
                         }),
@@ -16107,18 +16107,18 @@ function G0() {
                       v.jsx('h3', {
                         'data-loc': 'client\\src\\pages\\Home.tsx:423',
                         className: 'text-lg font-bold mb-2',
-                        children: 'GitHub',
+                        children: 'Email',
                       }),
                       v.jsx('p', {
                         'data-loc': 'client\\src\\pages\\Home.tsx:424',
                         className: 'text-sm text-muted-foreground',
-                        children: 'Veja meus projetos',
+                        children: 'Envie uma mensagem',
                       }),
                     ],
                   }),
                   v.jsxs('a', {
                     'data-loc': 'client\\src\\pages\\Home.tsx:427',
-                    href: 'https://instagram.com',
+                    href: 'https://instagram.com/matheus.cosentino',
                     target: '_blank',
                     rel: 'noopener noreferrer',
                     className:
@@ -16147,7 +16147,7 @@ function G0() {
                   }),
                   v.jsxs('a', {
                     'data-loc': 'client\\src\\pages\\Home.tsx:440',
-                    href: 'https://wa.me/',
+                    href: 'https://wa.me/5547992230328',
                     target: '_blank',
                     rel: 'noopener noreferrer',
                     className:
@@ -16171,32 +16171,6 @@ function G0() {
                         'data-loc': 'client\\src\\pages\\Home.tsx:450',
                         className: 'text-sm text-muted-foreground',
                         children: 'Converse diretamente',
-                      }),
-                    ],
-                  }),
-                  v.jsxs('div', {
-                    'data-loc': 'client\\src\\pages\\Home.tsx:453',
-                    className:
-                      'group bg-gradient-to-br from-primary/20 to-blue-500/20 backdrop-blur-xl border border-primary/30 rounded-2xl p-6 hover:border-primary/50 transition-all',
-                    children: [
-                      v.jsx('div', {
-                        'data-loc': 'client\\src\\pages\\Home.tsx:454',
-                        className:
-                          'w-12 h-12 bg-primary/30 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform',
-                        children: v.jsx(nl, {
-                          'data-loc': 'client\\src\\pages\\Home.tsx:455',
-                          className: 'w-6 h-6 text-primary',
-                        }),
-                      }),
-                      v.jsx('h3', {
-                        'data-loc': 'client\\src\\pages\\Home.tsx:457',
-                        className: 'text-lg font-bold mb-2',
-                        children: 'Discord',
-                      }),
-                      v.jsx('p', {
-                        'data-loc': 'client\\src\\pages\\Home.tsx:458',
-                        className: 'text-sm text-muted-foreground',
-                        children: 'Junte-se à comunidade',
                       }),
                     ],
                   }),
