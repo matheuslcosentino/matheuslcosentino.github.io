@@ -41,37 +41,37 @@ export default function Home() {
       status: "Concluído",
     },
     {
-      title: "Shadow of Memories",
-      description:
-        "Projeto desenvolvido em Game Jam, explorando mecânicas de memória e atmosfera sombria com narrativa não-linear.",
-      role: "Gameplay Programmer",
-      image: "/game-developer-portfolio/project2.png",
-      tags: ["Unity", "C#", "Game Jam", "Narrative Design"],
-      link: "https://uf-team.itch.io/sombra-das-memorias",
-      trailerUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
-      status: "Concluído",
+    title: "Horror Story Folks",
+    description:
+      "Jogo de horror independente em desenvolvimento pela UF Team. Focado em resolução de enigmas e mecânicas de sobrevivência.",
+    role: "Gameplay Programmer",
+    image: "/game-developer-portfolio/project2.png",
+    tags: ["Unity", "C#", "Horror", "Puzzle"],
+    link: "https://uf-team.itch.io/horrorstoryfolks",
+    trailerUrl: "https://youtu.be/DKj8WZ_q7nY",
+    status: "Em Desenvolvimento",
+    },
+    {
+    title: "Shadow of Memories",
+    description:
+      "Projeto desenvolvido em Game Jam, explorando mecânicas de memória e atmosfera sombria com narrativa não-linear.",
+    role: "Gameplay Programmer",
+    image: "/game-developer-portfolio/project3.png",
+    tags: ["Unity", "C#", "Game Jam", "Narrative Design"],
+    link: "https://uf-team.itch.io/sombra-das-memorias",
+    trailerUrl: "https://www.youtube.com/watch?v=6jRYfJA9XGQ",
+    status: "Concluído",
     },
     {
       title: "Visitors",
       description:
         "Jogo de horror independente focado em resolução de enigmas e mecânicas de sobrevivência em ambiente claustrofóbico.",
       role: "Gameplay Programmer",
-      image: "/game-developer-portfolio/project3.png",
+      image: "/game-developer-portfolio/project4.png",
       tags: ["Unity", "C#", "VR"],
       link: "https://uf-team.itch.io/visitors",
-      trailerUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
-      status: "Em Desenvolvimento",
-    },
-    {
-      title: "Horror Story Folks",
-      description:
-        "Jogo de horror independente em desenvolvimento pela UF Team. Focado em resolução de enigmas e mecânicas de sobrevivência.",
-      role: "Gameplay Programmer",
-      image: "/game-developer-portfolio/project4.png",
-      tags: ["Unity", "C#", "Horror", "Puzzle"],
-      link: "https://uf-team.itch.io/horrorstoryfolks",
-      trailerUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
-      status: "Em Desenvolvimento",
+      trailerUrl: "",
+      status: "Concluído",
     },
   ];
 
