@@ -167,7 +167,7 @@ export default function Home() {
                   <div className="w-16 h-16 bg-primary/30 rounded-2xl flex items-center justify-center">
                     <Gamepad2 className="w-8 h-8 text-primary" />
                   </div>
-                  <h3 className="text-2xl font-bold">2+ Anos</h3>
+                  <h3 className="text-2xl font-bold">4+ Anos</h3>
                   <p className="text-muted-foreground">Experiência em desenvolvimento de jogos</p>
                 </div>
               </div>
