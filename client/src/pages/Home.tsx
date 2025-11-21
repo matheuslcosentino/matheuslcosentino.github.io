@@ -508,10 +508,10 @@ export default function Home() {
             {PORTFOLIO.PROJECTS.map((project, idx) => (
               <div
                 key={idx}
-                className="group relative aspect-square overflow-hidden rounded-lg border border-border/50 hover:border-primary/50 transition-all duration-300 bg-card flex flex-col"
+                className="group relative overflow-hidden rounded-lg border border-border/50 hover:border-primary/50 transition-all duration-300 bg-card flex flex-col"
               >
                 {/* Image Container - Fixed height */}
-                <div className="relative h-[65%] overflow-hidden bg-background/50 flex items-center justify-center">
+                <div className="relative aspect-square overflow-hidden bg-background/50 flex items-center justify-center">
                   <img
                     src={project.image}
                     alt={project.title}
@@ -527,7 +527,7 @@ export default function Home() {
                 </div>
 
                 {/* Content Container */}
-                <div className="flex flex-col p-4 bg-gradient-to-b from-background/80 to-background/95 backdrop-blur-md border-t border-border/30">
+                <div className="flex flex-col p-4 bg-card/50 backdrop-blur-sm">
                   {/* Title and Description */}
                   <div className="mb-3">
                     <h3 className="text-base font-bold text-foreground mb-1">{project.title}</h3>
