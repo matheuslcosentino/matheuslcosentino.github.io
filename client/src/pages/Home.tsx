@@ -74,7 +74,7 @@ export default function Home() {
         ref={homeRef}
         className="min-h-screen flex items-center relative px-4 overflow-hidden"
         style={{
-          background: "radial-gradient(circle at 20% 50%, rgba(147, 51, 234, 0.2) 0%, transparent 50%), radial-gradient(circle at 80% 80%, rgba(168, 85, 247, 0.15) 0%, transparent 50%), linear-gradient(135deg, #000000 0%, #1a0a29 100%)",
+          background: "radial-gradient(circle at 20% 50%, rgba(6, 182, 212, 0.2) 0%, transparent 50%), radial-gradient(circle at 80% 80%, rgba(59, 130, 246, 0.15) 0%, transparent 50%), linear-gradient(135deg, #000000 0%, #0a1929 100%)",
         }}
       >
         {/* Animated Gaming Background */}
@@ -97,8 +97,8 @@ export default function Home() {
                   width: `${size}px`,
                   height: `${size}px`,
                   borderRadius: "50%",
-                  backgroundColor: "rgba(147, 51, 234, 0.6)",
-                  boxShadow: `0 0 ${size * 2}px rgba(147, 51, 234, 0.8)`,
+                  backgroundColor: "rgba(6, 182, 212, 0.6)",
+                  boxShadow: `0 0 ${size * 2}px rgba(6, 182, 212, 0.8)`,
                   animation: `pulse ${duration}s ease-in-out infinite`,
                   animationDelay: `${delay}s`,
                   filter: "blur(0.5px)",
@@ -122,7 +122,7 @@ export default function Home() {
                 height="80"
                 patternUnits="userSpaceOnUse"
               >
-                <path d="M 80 0 L 0 0 0 80" fill="none" stroke="rgba(147, 51, 234, 0.5)" strokeWidth="1" />
+                <path d="M 80 0 L 0 0 0 80" fill="none" stroke="rgba(6, 182, 212, 0.5)" strokeWidth="1" />
               </pattern>
             </defs>
             <rect width="100%" height="100%" fill="url(#grid)" />
@@ -135,14 +135,14 @@ export default function Home() {
               opacity: 0.08,
             }}
           >
-            <line x1="0" y1="0" x2="100%" y2="100%" stroke="rgba(147, 51, 234, 0.4)" strokeWidth="1"
+            <line x1="0" y1="0" x2="100%" y2="100%" stroke="rgba(6, 182, 212, 0.4)" strokeWidth="1"
               style={{
                 animation: "dash 15s linear infinite",
                 strokeDasharray: "500",
                 strokeDashoffset: "0",
               }}
             />
-            <line x1="100%" y1="0" x2="0" y2="100%" stroke="rgba(168, 85, 247, 0.3)" strokeWidth="1"
+            <line x1="100%" y1="0" x2="0" y2="100%" stroke="rgba(59, 130, 246, 0.3)" strokeWidth="1"
               style={{
                 animation: "dashReverse 20s linear infinite",
                 strokeDasharray: "500",
@@ -162,7 +162,7 @@ export default function Home() {
             }}
           />
           <div
-            className="absolute w-[500px] h-[500px] bg-purple-500/8 rounded-full blur-3xl"
+            className="absolute w-[500px] h-[500px] bg-blue-500/8 rounded-full blur-3xl"
             style={{
               bottom: "10%",
               right: "5%",
@@ -172,7 +172,7 @@ export default function Home() {
             }}
           />
           <div
-            className="absolute w-80 h-80 bg-purple-500/5 rounded-full blur-2xl"
+            className="absolute w-80 h-80 bg-cyan-500/5 rounded-full blur-2xl"
             style={{
               top: "50%",
               right: "20%",
@@ -187,8 +187,8 @@ export default function Home() {
             className="absolute inset-0 opacity-10"
             style={{
               backgroundImage: `
-                linear-gradient(0deg, transparent 24%, rgba(147, 51, 234, 0.05) 25%, rgba(147, 51, 234, 0.05) 26%, transparent 27%, transparent 74%, rgba(147, 51, 234, 0.05) 75%, rgba(147, 51, 234, 0.05) 76%, transparent 77%, transparent),
-                linear-gradient(90deg, transparent 24%, rgba(147, 51, 234, 0.05) 25%, rgba(147, 51, 234, 0.05) 26%, transparent 27%, transparent 74%, rgba(147, 51, 234, 0.05) 75%, rgba(147, 51, 234, 0.05) 76%, transparent 77%, transparent)
+                linear-gradient(0deg, transparent 24%, rgba(6, 182, 212, 0.05) 25%, rgba(6, 182, 212, 0.05) 26%, transparent 27%, transparent 74%, rgba(6, 182, 212, 0.05) 75%, rgba(6, 182, 212, 0.05) 76%, transparent 77%, transparent),
+                linear-gradient(90deg, transparent 24%, rgba(6, 182, 212, 0.05) 25%, rgba(6, 182, 212, 0.05) 26%, transparent 27%, transparent 74%, rgba(6, 182, 212, 0.05) 75%, rgba(6, 182, 212, 0.05) 76%, transparent 77%, transparent)
               `,
               backgroundSize: "50px 50px",
               animation: "moveGrid 20s linear infinite",
@@ -310,7 +310,7 @@ export default function Home() {
           <div className="space-y-8 text-center flex flex-col items-center">
             <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold leading-tight">
               Olá, eu sou o{" "}
-              <span className="bg-gradient-to-r from-purple-500 via-purple-400 to-purple-500 bg-clip-text text-transparent animate-pulse">
+              <span className="bg-gradient-to-r from-primary via-blue-400 to-primary bg-clip-text text-transparent animate-pulse">
                 {PORTFOLIO.PERSONAL_INFO.name}
               </span>
             </h1>
@@ -377,7 +377,7 @@ export default function Home() {
             <span className="text-primary text-sm font-semibold tracking-wider uppercase">Conheça mais</span>
             <div className="flex justify-center my-8">
               <div className="relative group">
-                <div className="absolute -inset-1 bg-gradient-to-r from-primary to-purple-500 rounded-full blur opacity-75 group-hover:opacity-100 transition duration-300"></div>
+                <div className="absolute -inset-1 bg-gradient-to-r from-primary to-blue-500 rounded-full blur opacity-75 group-hover:opacity-100 transition duration-300"></div>
                 <img
                   src={`${import.meta.env.BASE_URL}profile.jpg`}
                   alt={PORTFOLIO.PERSONAL_INFO.fullName}
@@ -421,7 +421,7 @@ export default function Home() {
 
             {/* Right column - 2/5 width */}
             <div className="lg:col-span-2 space-y-6">
-              <div className="bg-gradient-to-br from-primary/10 to-purple-500/10 backdrop-blur-xl border border-primary/30 rounded-2xl p-8 sticky top-24">
+              <div className="bg-gradient-to-br from-primary/10 to-blue-500/10 backdrop-blur-xl border border-primary/30 rounded-2xl p-8 sticky top-24">
                 <h3 className="text-2xl font-bold text-primary mb-6 flex items-center gap-2">
                   <Layers className="w-6 h-6" />
                   Habilidades
@@ -463,7 +463,7 @@ export default function Home() {
         data-animate="true"
         className="min-h-screen flex items-center py-32 px-4 relative overflow-hidden"
         style={{
-          background: "radial-gradient(circle at 50% 50%, rgba(147, 51, 234, 0.1) 0%, transparent 50%), linear-gradient(180deg, #000000 0%, #1a0a29 100%)",
+          background: "radial-gradient(circle at 50% 50%, rgba(6, 182, 212, 0.1) 0%, transparent 50%), linear-gradient(180deg, #000000 0%, #0a1929 100%)",
         }}
       >
         <div className="container max-w-7xl mx-auto relative z-10">
