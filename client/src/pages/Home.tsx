@@ -399,7 +399,7 @@ export default function Home() {
           </div>
 
           <div className="grid lg:grid-cols-2 gap-8">
-            {/* Left column - Habilidades + Objetivos */}
+            {/* Left column - Habilidades */}
             <div className="space-y-6">
               <div className="bg-gradient-to-br from-primary/10 to-blue-500/10 backdrop-blur-xl border border-primary/30 rounded-2xl p-8">
                 <h3 className="text-2xl font-bold text-primary mb-6 flex items-center gap-2">
@@ -416,20 +416,6 @@ export default function Home() {
                     </div>
                   ))}
                 </div>
-              </div>
-
-              <div className="bg-gradient-to-br from-card/80 to-card/40 backdrop-blur-xl border border-border/50 rounded-2xl p-8 hover:border-primary/30 transition-all">
-                <h3 className="text-2xl font-bold text-foreground mb-4 flex items-center gap-2">
-                  🎯 Objetivos
-                </h3>
-                <ul className="space-y-3 text-sm text-muted-foreground">
-                  {PORTFOLIO.ABOUT_CONTENT.goals.map((goal, idx) => (
-                    <li key={idx} className="flex items-start gap-2">
-                      <span className="text-primary mt-1">▸</span>
-                      <span>{goal}</span>
-                    </li>
-                  ))}
-                </ul>
               </div>
             </div>
 
