@@ -55,38 +55,77 @@ export default function Home() {
       >
         {/* Animated Gaming Background */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          {/* Animated Elements - Random distribution */}
-          {Array.from({ length: 160 }).map((_, idx) => {
-            const emojis = ["🎮", "🕹️", "🎯", "⚡", "🌟", "◆", "★", "◯", "✕", "□", "△", "⬜", "🎲", "🎪", "🔥", "💫", "✨", "🌠"];
-            const emoji = emojis[idx % emojis.length];
-            
-            // Distribuição completamente aleatória
+          {/* Animated Particles */}
+          {Array.from({ length: 50 }).map((_, idx) => {
             const top = Math.random() * 100;
             const left = Math.random() * 100;
-            const size = Math.random() * 28 + 16; // 16-44px
-            const delay = Math.random() * 5;
-            const duration = Math.random() * 2.5 + 4.5; // 4.5-7s
+            const size = Math.random() * 3 + 1; // 1-4px particles
+            const delay = Math.random() * 8;
+            const duration = Math.random() * 4 + 6; // 6-10s
             
             return (
               <div
-                key={idx}
+                key={`particle-${idx}`}
                 style={{
                   position: "absolute",
                   top: `${top}%`,
                   left: `${left}%`,
-                  fontSize: `${size}px`,
-                  opacity: Math.random() * 0.2 + 0.05,
-                  animation: `float ${duration}s ease-in-out infinite`,
+                  width: `${size}px`,
+                  height: `${size}px`,
+                  borderRadius: "50%",
+                  backgroundColor: "rgba(6, 182, 212, 0.6)",
+                  boxShadow: `0 0 ${size * 2}px rgba(6, 182, 212, 0.8)`,
+                  animation: `pulse ${duration}s ease-in-out infinite`,
                   animationDelay: `${delay}s`,
-                  color: "rgba(6, 182, 212, 0.4)",
-                  userSelect: "none",
-                  pointerEvents: "none",
+                  filter: "blur(0.5px)",
                 }}
-              >
-                {emoji}
-              </div>
+              />
             );
           })}
+
+          {/* Animated Grid Lines */}
+          <svg
+            className="absolute inset-0 w-full h-full"
+            style={{
+              opacity: 0.15,
+              animation: "moveGrid 20s linear infinite",
+            }}
+          >
+            <defs>
+              <pattern
+                id="grid"
+                width="80"
+                height="80"
+                patternUnits="userSpaceOnUse"
+              >
+                <path d="M 80 0 L 0 0 0 80" fill="none" stroke="rgba(6, 182, 212, 0.5)" strokeWidth="1" />
+              </pattern>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#grid)" />
+          </svg>
+
+          {/* Glowing Lines - Animated */}
+          <svg
+            className="absolute inset-0 w-full h-full"
+            style={{
+              opacity: 0.08,
+            }}
+          >
+            <line x1="0" y1="0" x2="100%" y2="100%" stroke="rgba(6, 182, 212, 0.4)" strokeWidth="1"
+              style={{
+                animation: "dash 15s linear infinite",
+                strokeDasharray: "500",
+                strokeDashoffset: "0",
+              }}
+            />
+            <line x1="100%" y1="0" x2="0" y2="100%" stroke="rgba(59, 130, 246, 0.3)" strokeWidth="1"
+              style={{
+                animation: "dashReverse 20s linear infinite",
+                strokeDasharray: "500",
+                strokeDashoffset: "0",
+              }}
+            />
+          </svg>
 
           {/* Glowing gradient orbs - Multiple layers */}
           <div
@@ -158,6 +197,18 @@ export default function Home() {
               }
               100% {
                 transform: translateY(50px);
+              }
+            }
+            
+            @keyframes dash {
+              to {
+                stroke-dashoffset: -500;
+              }
+            }
+            
+            @keyframes dashReverse {
+              to {
+                stroke-dashoffset: 500;
               }
             }
           `}</style>
