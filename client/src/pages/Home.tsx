@@ -1,8 +1,21 @@
 import { useRef, useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
-import { ChevronDown, Gamepad2, Code, Layers, Github, Linkedin, Mail, MessageCircle, Instagram } from "lucide-react";
+import { ChevronDown, Gamepad2, Code, Layers } from "lucide-react";
 import Header from "@/components/Header";
 import ProjectCard from "@/components/ProjectCard";
+import * as PORTFOLIO from "@/portfolio";
+
+// Icon mapping
+const getIcon = (iconName: string) => {
+  const iconMap: { [key: string]: any } = {
+    Github: (() => { const { Github } = require("lucide-react"); return Github; })(),
+    Linkedin: (() => { const { Linkedin } = require("lucide-react"); return Linkedin; })(),
+    Mail: (() => { const { Mail } = require("lucide-react"); return Mail; })(),
+    MessageCircle: (() => { const { MessageCircle } = require("lucide-react"); return MessageCircle; })(),
+    Instagram: (() => { const { Instagram } = require("lucide-react"); return Instagram; })(),
+  };
+  return iconMap[iconName] || null;
+};
 
 export default function Home() {
   const aboutRef = useRef<HTMLElement>(null);
@@ -28,67 +41,11 @@ export default function Home() {
     refs[section]?.current?.scrollIntoView({ behavior: "smooth" });
   };
 
-  const projects = [
-    {
-      title: "Delirium",
-      description:
-        "Jogo de horror psicológico desenvolvido em TCC (Trabalho de Conclusão de Curso), explorando mecânicas de sanidade mental e atmosfera perturbadora.",
-      role: "Lead Programmer",
-      image: "/project1.png",
-      tags: ["Unity", "C#", "Game Jam", "Psychological Horror"],
-      link: "https://unholysaintstudios.itch.io/delirium",
-      trailerUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
-      status: "Concluído",
-    },
-    {
-    title: "Horror Story Folks",
-    description:
-      "Jogo de horror independente em desenvolvimento pela UF Team. Focado em resolução de enigmas e mecânicas de sobrevivência.",
-    role: "Gameplay Programmer",
-    image: "/project2.png",
-    tags: ["Unity", "C#", "Horror", "Puzzle"],
-    link: "https://uf-team.itch.io/horrorstoryfolks",
-    trailerUrl: "https://youtu.be/DKj8WZ_q7nY",
-    status: "Em Desenvolvimento",
-    },
-    {
-    title: "Shadow of Memories",
-    description:
-      "Projeto desenvolvido em Game Jam, explorando mecânicas de memória e atmosfera sombria com narrativa não-linear.",
-    role: "Gameplay Programmer",
-    image: "/project3.png",
-    tags: ["Unity", "C#", "Game Jam", "Narrative Design"],
-    link: "https://uf-team.itch.io/sombra-das-memorias",
-    trailerUrl: "https://www.youtube.com/watch?v=6jRYfJA9XGQ",
-    status: "Concluído",
-    },
-    {
-      title: "Visitors",
-      description:
-        "Jogo de horror independente focado em resolução de enigmas e mecânicas de sobrevivência em ambiente claustrofóbico.",
-      role: "Gameplay Programmer",
-      image: "/project4.png",
-      tags: ["Unity", "C#", "VR"],
-      link: "https://uf-team.itch.io/visitors",
-      trailerUrl: "",
-      status: "Concluído",
-    },
-  ];
-
-  const skills = [
-    "Unity 3D",
-    "C#",
-    ".NET",
-    "Game Design",
-    "Gameplay Programming",
-    "Git",
-  ];
-
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
-      <Header onNavigate={scrollToSection} />
+      <Header onNavigate={scrollToSection} navItems={PORTFOLIO.NAV_ITEMS as any} />
 
-      {/* Hero Section - Asymmetric Layout */}
+      {/* Hero Section */}
       <section
         ref={homeRef}
         className="min-h-screen flex items-center relative px-4 overflow-hidden"
@@ -98,70 +55,21 @@ export default function Home() {
       >
         {/* Animated Gaming Background */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          {/* Animated Gamepad Icon */}
-          <div
-            className="absolute text-primary/15 text-9xl opacity-20"
-            style={{
-              top: "10%",
-              left: "5%",
-              animation: "float 6s ease-in-out infinite",
-              transform: `translateY(${scrollY * 0.3}px) rotate(-20deg)`,
-            }}
-          >
-            🎮
-          </div>
-
-          {/* Animated Controller Buttons */}
-          <div
-            className="absolute text-primary/12 text-7xl opacity-15"
-            style={{
-              top: "60%",
-              right: "10%",
-              animation: "float 8s ease-in-out infinite 1s",
-              transform: `translateY(${scrollY * -0.2}px) rotate(15deg)`,
-            }}
-          >
-            ◯ ✕ □ △
-          </div>
-
-          {/* Animated Joystick */}
-          <div
-            className="absolute text-primary/10 text-8xl opacity-15"
-            style={{
-              bottom: "15%",
-              left: "15%",
-              animation: "float 7s ease-in-out infinite 0.5s",
-              transform: `translateY(${scrollY * 0.1}px) scale(1)`,
-            }}
-          >
-            ↖
-          </div>
-
-          {/* Animated Dice/Cube */}
-          <div
-            className="absolute text-blue-500/10 text-6xl opacity-20"
-            style={{
-              bottom: "20%",
-              right: "5%",
-              animation: "float 9s ease-in-out infinite 1.5s",
-              transform: `translateY(${scrollY * -0.15}px) rotate(45deg)`,
-            }}
-          >
-            ⬜
-          </div>
-
-          {/* Animated Star */}
-          <div
-            className="absolute text-cyan-400/8 text-8xl opacity-20"
-            style={{
-              top: "30%",
-              right: "20%",
-              animation: "float 10s ease-in-out infinite 2s",
-              transform: `translateY(${scrollY * 0.2}px)`,
-            }}
-          >
-            ★
-          </div>
+          {PORTFOLIO.DESIGN_CONFIG.heroAnimationElements.map((element, idx) => (
+            <div
+              key={idx}
+              className={`absolute text-primary/15 text-${element.size} opacity-20`}
+              style={{
+                [element.position.split(" ")[0].split("-")[0]]: element.position.split(" ")[0].split("-")[1],
+                [element.position.split(" ")[1].split("-")[0]]: element.position.split(" ")[1].split("-")[1],
+                animation: `float 6s ease-in-out infinite`,
+                animationDelay: element.delay,
+                transform: `translateY(${scrollY * 0.3}px)`,
+              }}
+            >
+              {element.emoji}
+            </div>
+          ))}
 
           {/* Glowing gradient orbs */}
           <div
@@ -197,11 +105,10 @@ export default function Home() {
         <div className="container max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center relative z-10">
           {/* Left side - Text content */}
           <div className="space-y-8 lg:pr-12">
-            
             <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold leading-tight">
               Olá, eu sou o{" "}
               <span className="bg-gradient-to-r from-primary via-blue-400 to-primary bg-clip-text text-transparent animate-pulse">
-                Matheus
+                {PORTFOLIO.PERSONAL_INFO.name}
               </span>
             </h1>
 
@@ -221,9 +128,7 @@ export default function Home() {
             </div>
 
             <p className="text-xl text-muted-foreground leading-relaxed">
-              Desenvolvendo experiências interativas que combinam complexidade
-              técnica e gameplay envolvente, com paixão por jogos de terror e
-              narrativas imersivas.
+              {PORTFOLIO.PERSONAL_INFO.subtitle}
             </p>
 
             <div className="flex flex-wrap gap-4 pt-4">
@@ -281,29 +186,28 @@ export default function Home() {
         </button>
       </section>
 
-      {/* About Section - Creative Two Column Layout */}
+      {/* About Section */}
       <section
         ref={aboutRef}
         className="min-h-screen flex items-center py-32 px-4 bg-background relative"
       >
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/5 to-transparent pointer-events-none" />
-        
+
         <div className="container max-w-7xl mx-auto relative z-10">
           <div className="text-center mb-16">
             <span className="text-primary text-sm font-semibold tracking-wider uppercase">Conheça mais</span>
-            {/* Foto de Perfil */}
-              <div className="flex justify-center my-8">
-                <div className="relative group">
-                  <div className="absolute -inset-1 bg-gradient-to-r from-primary to-blue-500 rounded-full blur opacity-75 group-hover:opacity-100 transition duration-300"></div>
-                  <img 
-                    src={`${import.meta.env.BASE_URL}profile.jpg`} 
-                    alt="Matheus Lopes" 
-                    className="relative w-32 h-32 md:w-40 md:h-40 rounded-full object-cover border-4 border-background shadow-2xl"
-                  />
-                </div>
+            <div className="flex justify-center my-8">
+              <div className="relative group">
+                <div className="absolute -inset-1 bg-gradient-to-r from-primary to-blue-500 rounded-full blur opacity-75 group-hover:opacity-100 transition duration-300"></div>
+                <img
+                  src={`${import.meta.env.BASE_URL}profile.jpg`}
+                  alt={PORTFOLIO.PERSONAL_INFO.fullName}
+                  className="relative w-32 h-32 md:w-40 md:h-40 rounded-full object-cover border-4 border-background shadow-2xl"
+                />
               </div>
+            </div>
             <h2 className="text-5xl md:text-6xl font-bold mt-4 mb-6 text-foreground">
-              Sobre Mim
+              {PORTFOLIO.ABOUT_CONTENT.title}
             </h2>
             <div className="w-24 h-1 bg-gradient-to-r from-transparent via-primary to-transparent mx-auto" />
           </div>
@@ -319,36 +223,20 @@ export default function Home() {
                   <div>
                     <h3 className="text-2xl font-bold text-primary mb-2">Desenvolvedor Especializado</h3>
                     <p className="text-muted-foreground leading-relaxed">
-                      Desenvolvedor de jogos especializado em C# focado no desenvolvimento e implementação de novas mecânicas. Apaixonado por jogos de terror e com grande amor por contar histórias.
+                      {PORTFOLIO.ABOUT_CONTENT.intro}
                     </p>
                   </div>
                 </div>
               </div>
 
               <div className="grid md:grid-cols-2 gap-6">
-                <div className="bg-gradient-to-br from-card/80 to-card/40 backdrop-blur-xl border border-border/50 rounded-2xl p-6 hover:border-primary/30 transition-all">
-                  <span className="text-3xl mb-3 block">🎓</span>
-                  <h4 className="font-bold text-lg mb-2">Formação</h4>
-                  <p className="text-sm text-muted-foreground">Graduação em Game Design na Univali – Balneário Camboriú</p>
-                </div>
-
-                <div className="bg-gradient-to-br from-card/80 to-card/40 backdrop-blur-xl border border-border/50 rounded-2xl p-6 hover:border-primary/30 transition-all">
-                  <span className="text-3xl mb-3 block">🏆</span>
-                  <h4 className="font-bold text-lg mb-2">Conquistas</h4>
-                  <p className="text-sm text-muted-foreground">2 projetos premiados em Game Jams com equipes multidisciplinares</p>
-                </div>
-
-                <div className="bg-gradient-to-br from-card/80 to-card/40 backdrop-blur-xl border border-border/50 rounded-2xl p-6 hover:border-primary/30 transition-all">
-                  <span className="text-3xl mb-3 block">💻</span>
-                  <h4 className="font-bold text-lg mb-2">Especialização</h4>
-                  <p className="text-sm text-muted-foreground">C# e Unity com foco em sistemas de gameplay e mecânicas interativas</p>
-                </div>
-
-                <div className="bg-gradient-to-br from-card/80 to-card/40 backdrop-blur-xl border border-border/50 rounded-2xl p-6 hover:border-primary/30 transition-all">
-                  <span className="text-3xl mb-3 block">👻</span>
-                  <h4 className="font-bold text-lg mb-2">Paixão</h4>
-                  <p className="text-sm text-muted-foreground">Jogos de terror e criação de experiências imersivas e atmosféricas</p>
-                </div>
+                {PORTFOLIO.ABOUT_CONTENT.highlights.map((highlight, idx) => (
+                  <div key={idx} className="bg-gradient-to-br from-card/80 to-card/40 backdrop-blur-xl border border-border/50 rounded-2xl p-6 hover:border-primary/30 transition-all">
+                    <span className="text-3xl mb-3 block">{highlight.icon}</span>
+                    <h4 className="font-bold text-lg mb-2">{highlight.title}</h4>
+                    <p className="text-sm text-muted-foreground">{highlight.text}</p>
+                  </div>
+                ))}
               </div>
             </div>
 
@@ -360,7 +248,7 @@ export default function Home() {
                   Habilidades
                 </h3>
                 <div className="space-y-3">
-                  {skills.map((skill, index) => (
+                  {PORTFOLIO.SKILLS.map((skill, index) => (
                     <div
                       key={index}
                       className="bg-card/50 backdrop-blur-sm border border-border/50 rounded-xl px-4 py-3 hover:border-primary/50 hover:bg-primary/5 transition-all cursor-default group"
@@ -375,18 +263,12 @@ export default function Home() {
                     🎯 Objetivos
                   </h4>
                   <ul className="space-y-3 text-sm text-muted-foreground">
-                    <li className="flex items-start gap-2">
-                      <span className="text-primary mt-1">▸</span>
-                      <span>Iniciar carreira na indústria de desenvolvimento de jogos</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="text-primary mt-1">▸</span>
-                      <span>Aprender mais sobre C# e outras linguagens</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="text-primary mt-1">▸</span>
-                      <span>Criar experiências de jogo memoráveis e inovadoras</span>
-                    </li>
+                    {PORTFOLIO.ABOUT_CONTENT.goals.map((goal, idx) => (
+                      <li key={idx} className="flex items-start gap-2">
+                        <span className="text-primary mt-1">▸</span>
+                        <span>{goal}</span>
+                      </li>
+                    ))}
                   </ul>
                 </div>
               </div>
@@ -395,7 +277,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Projects Section - Bento Grid Layout */}
+      {/* Projects Section */}
       <section
         ref={projectsRef}
         className="min-h-screen flex items-center py-32 px-4 relative overflow-hidden"
@@ -407,106 +289,67 @@ export default function Home() {
           <div className="text-center mb-16">
             <span className="text-primary text-sm font-semibold tracking-wider uppercase">Portfolio</span>
             <h2 className="text-5xl md:text-6xl font-bold mt-4 mb-6 text-foreground">
-              Meus Projetos
+              {PORTFOLIO.PROJECTS_CONTENT.title}
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Conheça meus projetos com uma seleção dos mais recentes trabalhos em desenvolvimento de jogos.
+              {PORTFOLIO.PROJECTS_CONTENT.subtitle}
             </p>
             <div className="w-24 h-1 bg-gradient-to-r from-transparent via-primary to-transparent mx-auto mt-6" />
           </div>
 
-          {/* Bento Grid - Asymmetric layout */}
+          {/* Bento Grid */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-fr">
-            {/* First project - Takes 2 columns on large screens */}
             <div className="lg:col-span-2">
-              <ProjectCard {...projects[0]} />
+              <ProjectCard {...PORTFOLIO.PROJECTS[0]} />
             </div>
-
-            {/* Second project - Normal size */}
             <div>
-              <ProjectCard {...projects[1]} />
+              <ProjectCard {...PORTFOLIO.PROJECTS[1]} />
             </div>
-
-            {/* Third project - Takes 2 columns on medium screens */}
             <div className="md:col-span-2 lg:col-span-1">
-              <ProjectCard {...projects[2]} />
+              <ProjectCard {...PORTFOLIO.PROJECTS[2]} />
             </div>
-
-            {/* Fourth project */}
             <div className="md:col-span-2 lg:col-span-2">
-              <ProjectCard {...projects[3]} />
+              <ProjectCard {...PORTFOLIO.PROJECTS[3]} />
             </div>
           </div>
         </div>
       </section>
 
-      {/* Contact Section - Modern Card Layout */}
+      {/* Contact Section */}
       <section
         ref={contactRef}
         className="min-h-screen flex items-center py-32 px-4 bg-background relative"
       >
         <div className="absolute inset-0 bg-gradient-to-t from-primary/5 via-transparent to-transparent pointer-events-none" />
-        
+
         <div className="container max-w-5xl mx-auto relative z-10">
           <div className="text-center mb-16">
             <span className="text-primary text-sm font-semibold tracking-wider uppercase">Entre em contato</span>
             <h2 className="text-5xl md:text-6xl font-bold mt-4 mb-6 text-foreground">
-              Vamos Conversar!
+              {PORTFOLIO.CONTACT_CONTENT.title}
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Estou sempre aberto a novas oportunidades e colaborações. Entre em contato através das redes sociais.
+              {PORTFOLIO.CONTACT_CONTENT.subtitle}
             </p>
             <div className="w-24 h-1 bg-gradient-to-r from-transparent via-primary to-transparent mx-auto mt-6" />
           </div>
 
           <div className="flex flex-wrap justify-center gap-3">
-            <a
-              href="https://linkedin.com/in/matheus-cosentino/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-border/50 bg-card/40 backdrop-blur-sm hover:border-primary/50 hover:bg-card/60 transition-all"
-            >
-              <Linkedin className="w-5 h-5 text-primary" />
-              <span className="text-sm font-semibold">LinkedIn</span>
-            </a>
-
-            <a
-              href="https://github.com/matheuslcosentino"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-border/50 bg-card/40 backdrop-blur-sm hover:border-primary/50 hover:bg-card/60 transition-all"
-            >
-              <Github className="w-5 h-5 text-primary" />
-              <span className="text-sm font-semibold">GitHub</span>
-            </a>
-
-            <a
-              href="mailto:matheuslopescosentino@hotmail.com"
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-border/50 bg-card/40 backdrop-blur-sm hover:border-primary/50 hover:bg-card/60 transition-all"
-            >
-              <Mail className="w-5 h-5 text-primary" />
-              <span className="text-sm font-semibold">Email</span>
-            </a>
-
-            <a
-              href="https://instagram.com/matheus.cosentino"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-border/50 bg-card/40 backdrop-blur-sm hover:border-primary/50 hover:bg-card/60 transition-all"
-            >
-              <Instagram className="w-5 h-5 text-primary" />
-              <span className="text-sm font-semibold">Instagram</span>
-            </a>
-
-            <a
-              href="https://wa.me/5547992230328"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-border/50 bg-card/40 backdrop-blur-sm hover:border-primary/50 hover:bg-card/60 transition-all"
-            >
-              <MessageCircle className="w-5 h-5 text-primary" />
-              <span className="text-sm font-semibold">WhatsApp</span>
-            </a>
+            {PORTFOLIO.CONTACT_LINKS.map((link, idx) => {
+              const Icon = getIcon(link.icon);
+              return (
+                <a
+                  key={idx}
+                  href={link.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-border/50 bg-card/40 backdrop-blur-sm hover:border-primary/50 hover:bg-card/60 transition-all"
+                >
+                  {Icon && <Icon className="w-5 h-5 text-primary" />}
+                  <span className="text-sm font-semibold">{link.name}</span>
+                </a>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -515,10 +358,10 @@ export default function Home() {
       <footer className="py-8 border-t border-border/50 bg-card/30 backdrop-blur-sm">
         <div className="container text-center">
           <p className="text-muted-foreground text-sm">
-            © 2024 Matheus Lopes. Todos os direitos reservados.
+            {PORTFOLIO.FOOTER_TEXT.copyright}
           </p>
           <p className="text-muted-foreground/60 text-xs mt-2">
-            Desenvolvido com React, Tailwind CSS e muito ☕
+            {PORTFOLIO.FOOTER_TEXT.credits}
           </p>
         </div>
       </footer>

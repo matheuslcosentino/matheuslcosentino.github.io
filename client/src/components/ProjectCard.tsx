@@ -3,7 +3,7 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ExternalLink, Play } from "lucide-react";
 import TrailerModal from "@/components/TrailerModal";
-import { handlePlayClick, buildYouTubeEmbedUrl, openLink } from "@/functions";
+import * as PORTFOLIO from "@/portfolio";
 
 interface ProjectCardProps {
   title: string;
@@ -47,17 +47,17 @@ export default function ProjectCard({
             <h3 className="text-2xl font-bold text-white drop-shadow-lg">{title}</h3>
           </div>
         </div>
-        
+
         <div className="p-6 space-y-4">
           <p className="text-muted-foreground text-sm leading-relaxed line-clamp-3">
             {description}
           </p>
-          
+
           <div className="flex items-center gap-2 text-sm">
             <span className="font-semibold text-primary">Função:</span>
             <span className="text-foreground">{role}</span>
           </div>
-          
+
           <div className="flex flex-wrap gap-2">
             {tags.map((tag, index) => (
               <span
@@ -68,25 +68,29 @@ export default function ProjectCard({
               </span>
             ))}
           </div>
-          
+
           <div className="flex gap-3 pt-2">
             {link && (
               <Button
                 variant="default"
                 size="sm"
                 className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-md hover:shadow-lg hover:shadow-primary/20 transition-all"
-                onClick={() => openLink(link)}
+                onClick={() => PORTFOLIO.openLink(link)}
               >
                 <ExternalLink className="w-4 h-4 mr-2" />
                 Acessar
               </Button>
             )}
             {trailerUrl && (
-              <Button 
-                variant="outline" 
-                size="sm" 
+              <Button
+                variant="outline"
+                size="sm"
                 className="text-foreground border-border hover:bg-card/50 hover:border-primary/30"
-                onClick={() => handlePlayClick(trailerUrl, () => setIsTrailerOpen(true))}
+                onClick={() =>
+                  PORTFOLIO.handlePlayClick(trailerUrl, () =>
+                    setIsTrailerOpen(true)
+                  )
+                }
               >
                 <Play className="w-4 h-4 mr-2" />
                 Play
@@ -96,10 +100,10 @@ export default function ProjectCard({
         </div>
       </Card>
 
-      {trailerUrl && trailerUrl.trim() !== '' && (
-        <TrailerModal 
-          isOpen={isTrailerOpen} 
-          trailerUrl={buildYouTubeEmbedUrl(trailerUrl)} 
+      {trailerUrl && trailerUrl.trim() !== "" && (
+        <TrailerModal
+          isOpen={isTrailerOpen}
+          trailerUrl={PORTFOLIO.buildYouTubeEmbedUrl(trailerUrl)}
           onClose={() => setIsTrailerOpen(false)}
         />
       )}

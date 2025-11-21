@@ -1,12 +1,19 @@
 import { Button } from "@/components/ui/button";
 import { Menu } from "lucide-react";
 import { useState } from "react";
+import * as PORTFOLIO from "@/portfolio";
+
+interface NavItem {
+  label: string;
+  section: string;
+}
 
 interface HeaderProps {
   onNavigate: (section: string) => void;
+  navItems?: NavItem[];
 }
 
-export default function Header({ onNavigate }: HeaderProps) {
+export default function Header({ onNavigate, navItems = PORTFOLIO.NAV_ITEMS as any }: HeaderProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
@@ -29,27 +36,16 @@ export default function Header({ onNavigate }: HeaderProps) {
             >
               Início
             </Button>
-            <Button
-              variant="ghost"
-              onClick={() => onNavigate("about")}
-              className="text-foreground hover:text-primary hover:bg-primary/10"
-            >
-              Sobre
-            </Button>
-            <Button
-              variant="ghost"
-              onClick={() => onNavigate("projects")}
-              className="text-foreground hover:text-primary hover:bg-primary/10"
-            >
-              Projetos
-            </Button>
-            <Button
-              variant="ghost"
-              onClick={() => onNavigate("contact")}
-              className="text-foreground hover:text-primary hover:bg-primary/10"
-            >
-              Contato
-            </Button>
+            {navItems.map((item) => (
+              <Button
+                key={item.section}
+                variant="ghost"
+                onClick={() => onNavigate(item.section)}
+                className="text-foreground hover:text-primary hover:bg-primary/10"
+              >
+                {item.label}
+              </Button>
+            ))}
           </nav>
 
           {/* Mobile Menu Button */}
@@ -76,36 +72,19 @@ export default function Header({ onNavigate }: HeaderProps) {
             >
               Início
             </Button>
-            <Button
-              variant="ghost"
-              onClick={() => {
-                onNavigate("about");
-                setMobileMenuOpen(false);
-              }}
-              className="w-full justify-start text-foreground hover:text-primary hover:bg-primary/10"
-            >
-              Sobre
-            </Button>
-            <Button
-              variant="ghost"
-              onClick={() => {
-                onNavigate("projects");
-                setMobileMenuOpen(false);
-              }}
-              className="w-full justify-start text-foreground hover:text-primary hover:bg-primary/10"
-            >
-              Projetos
-            </Button>
-            <Button
-              variant="ghost"
-              onClick={() => {
-                onNavigate("contact");
-                setMobileMenuOpen(false);
-              }}
-              className="w-full justify-start text-foreground hover:text-primary hover:bg-primary/10"
-            >
-              Contato
-            </Button>
+            {navItems.map((item) => (
+              <Button
+                key={item.section}
+                variant="ghost"
+                onClick={() => {
+                  onNavigate(item.section);
+                  setMobileMenuOpen(false);
+                }}
+                className="w-full justify-start text-foreground hover:text-primary hover:bg-primary/10"
+              >
+                {item.label}
+              </Button>
+            ))}
           </nav>
         )}
       </div>
