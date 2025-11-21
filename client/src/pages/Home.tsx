@@ -309,7 +309,7 @@ export default function Home() {
           <div className="space-y-8 text-center flex flex-col items-center">
             <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold leading-tight">
               Olá, eu sou o{" "}
-              <span className="bg-gradient-to-r from-primary via-blue-400 to-primary bg-clip-text text-transparent animate-pulse">
+              <span className="bg-gradient-to-r from-purple-500 via-purple-400 to-purple-500 bg-clip-text text-transparent animate-pulse">
                 {PORTFOLIO.PERSONAL_INFO.name}
               </span>
             </h1>
