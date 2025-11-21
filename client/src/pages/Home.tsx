@@ -1,6 +1,6 @@
 import { useRef, useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
-import { ChevronDown, Gamepad2, Code, Layers, Github, Linkedin, Mail, MessageCircle, Instagram, ExternalLink } from "lucide-react";
+import { ChevronDown, Gamepad2, Code, Layers, Github, Linkedin, Mail, MessageCircle, Instagram, ExternalLink, Download, Play } from "lucide-react";
 import Header from "@/components/Header";
 import ProjectCard from "@/components/ProjectCard";
 import * as PORTFOLIO from "@/portfolio";
@@ -611,44 +611,58 @@ export default function Home() {
           animation: "float-up 3s ease-in-out infinite",
         }}
       >
-        <a
-          href={PORTFOLIO.PROJECTS[0].link}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="block"
-        >
-          <div className="bg-gradient-to-br from-card to-card/80 rounded-2xl p-4 w-72 shadow-2xl border border-border/50 hover:shadow-primary/30 hover:border-primary/30 transition-all duration-300 hover:scale-105">
-            <div className="flex gap-4">
-              {/* Card Image */}
-              <div className="flex-shrink-0">
-                <div className="w-20 h-20 rounded-xl bg-gradient-to-br from-primary/30 to-primary/10 flex items-center justify-center border-2 border-primary/30 overflow-hidden">
-                  <img
-                    src={`${import.meta.env.BASE_URL}project1.png`}
-                    alt="Delirium"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-              </div>
-
-              {/* Card Content */}
-              <div className="flex-1 min-w-0">
-                <div className="flex items-center gap-1 mb-1">
-                  <span className="text-xs font-bold text-primary bg-primary/10 px-2 py-1 rounded">Recomendado</span>
-                </div>
-                <h3 className="text-foreground font-bold text-sm leading-tight mb-1">
-                  {PORTFOLIO.PROJECTS[0].title}
-                </h3>
-                <p className="text-muted-foreground text-xs line-clamp-2 mb-3">
-                  {PORTFOLIO.PROJECTS[0].description}
-                </p>
-                <div className="flex items-center gap-1 text-primary hover:text-primary/80 transition-colors">
-                  <span className="text-xs font-semibold">Jogar Agora</span>
-                  <ExternalLink className="w-3 h-3" />
-                </div>
+        <div className="bg-gradient-to-br from-card to-card/80 rounded-2xl p-6 w-80 shadow-2xl border-2 border-primary/30 hover:border-primary/60 transition-all duration-300 hover:shadow-primary/30">
+          <div className="flex gap-4 mb-4">
+            {/* Card Image */}
+            <div className="flex-shrink-0">
+              <div className="w-24 h-24 rounded-xl bg-gradient-to-br from-primary/30 to-primary/10 flex items-center justify-center border-2 border-primary/30 overflow-hidden">
+                <img
+                  src={`${import.meta.env.BASE_URL}project1.png`}
+                  alt="Delirium"
+                  className="w-full h-full object-cover"
+                />
               </div>
             </div>
+
+            {/* Card Content */}
+            <div className="flex-1 min-w-0">
+              <div className="flex items-center gap-1 mb-1">
+                <span className="text-xs font-bold text-primary bg-primary/10 px-2 py-1 rounded">Recomendado</span>
+              </div>
+              <h3 className="text-foreground font-bold text-lg leading-tight mb-1">
+                {PORTFOLIO.PROJECTS[0].title}
+              </h3>
+              <p className="text-muted-foreground text-xs line-clamp-2 mb-2">
+                {PORTFOLIO.PROJECTS[0].role}
+              </p>
+              <p className="text-muted-foreground text-xs line-clamp-2">
+                {PORTFOLIO.PROJECTS[0].description}
+              </p>
+            </div>
           </div>
-        </a>
+
+          {/* Buttons */}
+          <div className="flex gap-2">
+            <a
+              href={PORTFOLIO.PROJECTS[0].link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex-1 flex items-center justify-center gap-2 px-3 py-2 bg-primary/20 hover:bg-primary/30 text-primary border border-primary/50 hover:border-primary/80 rounded-lg transition-all text-xs font-semibold"
+            >
+              <Download className="w-4 h-4" />
+              Baixe Agora
+            </a>
+            <a
+              href={PORTFOLIO.PROJECTS[0].trailerUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex-1 flex items-center justify-center gap-2 px-3 py-2 bg-primary/10 hover:bg-primary/20 text-primary border border-primary/30 hover:border-primary/60 rounded-lg transition-all text-xs font-semibold"
+            >
+              <Play className="w-4 h-4" />
+              Ver Trailer
+            </a>
+          </div>
+        </div>
       </div>
     </div>
   );
