@@ -630,7 +630,7 @@ export default function Home() {
             {/* Card Content */}
             <div className="flex-1 min-w-0">
               <div className="flex items-center gap-1 mb-1">
-                <span className="text-xs font-bold text-primary bg-primary/10 px-2 py-1 rounded">Recomendado</span>
+                <span className="text-xs font-bold text-primary bg-primary/10 px-2 py-1 rounded">Novo Lançamento!</span>
               </div>
               <h3 className="text-foreground font-bold text-lg leading-tight mb-1">
                 {PORTFOLIO.PROJECTS[0].title}
@@ -653,7 +653,7 @@ export default function Home() {
               Baixe Agora
             </a>
             <a
-              href={PORTFOLIO.PROJECTS[0].trailerUrl}
+              href={PORTFOLIO.PROJECTS[0].link}
               target="_blank"
               rel="noopener noreferrer"
               className="flex-1 flex items-center justify-center gap-2 px-3 py-2 bg-primary/10 hover:bg-primary/20 text-foreground border border-primary/30 hover:border-primary/60 rounded-lg transition-all text-xs font-semibold"
