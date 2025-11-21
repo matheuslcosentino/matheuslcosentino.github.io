@@ -15227,30 +15227,21 @@ function Q0() {
     description:
       "Projeto desenvolvido em Game Jam, explorando mecânicas de memória e atmosfera sombria com narrativa não-linear.",
     role: "Gameplay Programmer",
-    image: "/game-developer-portfolio/project3.png",
+    image: "/project3.png",
     tags: ["Unity", "C#", "Game Jam", "Narrative Design"],
     link: "https://uf-team.itch.io/sombra-das-memorias",
     trailerUrl: "https://www.youtube.com/watch?v=6jRYfJA9XGQ",
     status: "Concluído",
     },
-    {
-    title: "Visitors",
-    description:
-    "Experiência VR desenvolvida na matéria de Realidade Virtual, visando imersão e exploração em um ambiente virtual.",
-    role: "Gameplay Programmer",
-    image: "/game-developer-portfolio/project4.png",
-    tags: ["Unity", "C#", "VR"],
-    link: "https://uf-team.itch.io/visitors",
-    trailerUrl: "",
-    status: "Concluído",
-    },
     ],
     h = [
-      'Unity 3D',
-      'C#',
-      '.NET',
       'Game Design',
+      'Mechanics Development',
       'Gameplay Programming',
+      'Unity 3D',
+      '.NET',
+      'C#',
+      'Python',
       'Git',
     ];
   return v.jsxs('div', {
