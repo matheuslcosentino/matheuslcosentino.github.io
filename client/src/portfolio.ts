@@ -74,11 +74,13 @@ export const PROJECTS = [
 // ============================================================================
 
 export const SKILLS = [
-  "Unity 3D",
-  "C#",
-  ".NET",
   "Game Design",
-  "Gameplay Programming",
+  "Mechanic Programming",
+  "Unity 3D",
+  "Blender",
+  "C#",
+  "Python",
+  ".NET",
   "Git",
 ];
 
@@ -125,7 +127,7 @@ export const ABOUT_CONTENT = {
   currently: {
     developing: [
       "Sombra das Memórias",
-      "Deep Fal"
+      "DeepFall"
     ],
     publishing: [
       "Delirium"
