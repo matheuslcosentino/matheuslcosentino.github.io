@@ -120,8 +120,17 @@ export const CONTACT_LINKS = [
 
 export const ABOUT_CONTENT = {
   title: "Sobre Mim",
-  intro:
+  description:
     "Desenvolvedor de jogos especializado em C# focado no desenvolvimento e implementação de novas mecânicas. Apaixonado por jogos de terror e com grande amor por contar histórias.",
+  currently: {
+    developing: [
+      "Sombra das Memórias",
+      "Deep Fal"
+    ],
+    publishing: [
+      "Delirium"
+    ]
+  },
   highlights: [
     {
       icon: "🎓",

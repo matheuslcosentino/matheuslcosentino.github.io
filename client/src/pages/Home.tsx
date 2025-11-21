@@ -391,37 +391,17 @@ export default function Home() {
             <div className="w-24 h-1 bg-gradient-to-r from-transparent via-primary to-transparent mx-auto" />
           </div>
 
-          <div className="grid lg:grid-cols-5 gap-8">
-            {/* Left column - 3/5 width */}
-            <div className="lg:col-span-3 space-y-6">
-              <div className="bg-gradient-to-br from-card/80 to-card/40 backdrop-blur-xl border border-border/50 rounded-2xl p-8 hover:border-primary/30 transition-all group">
-                <div className="flex items-start gap-4 mb-6">
-                  <div className="w-12 h-12 bg-primary/20 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
-                    <span className="text-2xl">🧠</span>
-                  </div>
-                  <div>
-                    <h3 className="text-2xl font-bold text-primary mb-2">Desenvolvedor Especializado</h3>
-                    <p className="text-muted-foreground leading-relaxed">
-                      {PORTFOLIO.ABOUT_CONTENT.intro}
-                    </p>
-                  </div>
-                </div>
-              </div>
+          {/* Centered description text */}
+          <div className="text-center mb-12 max-w-3xl mx-auto">
+            <p className="text-lg text-muted-foreground leading-relaxed">
+              {PORTFOLIO.ABOUT_CONTENT.description}
+            </p>
+          </div>
 
-              <div className="grid md:grid-cols-2 gap-6">
-                {PORTFOLIO.ABOUT_CONTENT.highlights.map((highlight, idx) => (
-                  <div key={idx} className="bg-gradient-to-br from-card/80 to-card/40 backdrop-blur-xl border border-border/50 rounded-2xl p-6 hover:border-primary/30 transition-all">
-                    <span className="text-3xl mb-3 block">{highlight.icon}</span>
-                    <h4 className="font-bold text-lg mb-2">{highlight.title}</h4>
-                    <p className="text-sm text-muted-foreground">{highlight.text}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Right column - 2/5 width */}
-            <div className="lg:col-span-2 space-y-6">
-              <div className="bg-gradient-to-br from-primary/10 to-blue-500/10 backdrop-blur-xl border border-primary/30 rounded-2xl p-8 sticky top-24">
+          <div className="grid lg:grid-cols-2 gap-8">
+            {/* Left column - Habilidades */}
+            <div className="space-y-6">
+              <div className="bg-gradient-to-br from-primary/10 to-blue-500/10 backdrop-blur-xl border border-primary/30 rounded-2xl p-8">
                 <h3 className="text-2xl font-bold text-primary mb-6 flex items-center gap-2">
                   <Layers className="w-6 h-6" />
                   Habilidades
@@ -450,6 +430,54 @@ export default function Home() {
                     ))}
                   </ul>
                 </div>
+              </div>
+            </div>
+
+            {/* Right column - Atualmente + Cards */}
+            <div className="space-y-6">
+              {/* Atualmente Card */}
+              <div className="bg-gradient-to-br from-card/80 to-card/40 backdrop-blur-xl border border-border/50 rounded-2xl p-8 hover:border-primary/30 transition-all">
+                <h3 className="text-2xl font-bold text-primary mb-6 flex items-center gap-2">
+                  <span className="text-2xl">⚡</span>
+                  Atualmente
+                </h3>
+                
+                <div className="space-y-6">
+                  <div>
+                    <h4 className="font-bold text-lg mb-3 text-foreground">Desenvolvendo:</h4>
+                    <ul className="space-y-2">
+                      {PORTFOLIO.ABOUT_CONTENT.currently.developing.map((project, idx) => (
+                        <li key={idx} className="flex items-center gap-2 text-muted-foreground">
+                          <span className="text-primary">▸</span>
+                          <span>{project}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <div className="pt-4 border-t border-border/50">
+                    <h4 className="font-bold text-lg mb-3 text-foreground">Publicando:</h4>
+                    <ul className="space-y-2">
+                      {PORTFOLIO.ABOUT_CONTENT.currently.publishing.map((project, idx) => (
+                        <li key={idx} className="flex items-center gap-2 text-muted-foreground">
+                          <span className="text-primary">▸</span>
+                          <span>{project}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              {/* Highlights Cards */}
+              <div className="grid grid-cols-2 gap-4">
+                {PORTFOLIO.ABOUT_CONTENT.highlights.map((highlight, idx) => (
+                  <div key={idx} className="bg-gradient-to-br from-card/80 to-card/40 backdrop-blur-xl border border-border/50 rounded-2xl p-6 hover:border-primary/30 transition-all">
+                    <span className="text-3xl mb-3 block">{highlight.icon}</span>
+                    <h4 className="font-bold text-lg mb-2">{highlight.title}</h4>
+                    <p className="text-sm text-muted-foreground">{highlight.text}</p>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
