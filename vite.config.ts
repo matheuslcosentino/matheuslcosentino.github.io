@@ -5,10 +5,26 @@ import path from "path";
 import { defineConfig } from "vite";
 import { vitePluginManusRuntime } from "vite-plugin-manus-runtime";
 
+// Plugin para copiar index.html para raiz após build
+const copyIndexToRoot = {
+  name: 'copy-index-to-root',
+  apply: 'build' as const,
+  async writeBundle() {
+    const sourceIndex = path.resolve(import.meta.dirname, 'dist/public/index.html');
+    const targetIndex = path.resolve(import.meta.dirname, 'index.html');
+    
+    if (fs.existsSync(sourceIndex)) {
+      fs.copyFileSync(sourceIndex, targetIndex);
+      console.log('✓ index.html copiado para raiz');
+    }
+  }
+};
+
 const plugins = [
   react(),
   tailwindcss(),
-  vitePluginManusRuntime()
+  vitePluginManusRuntime(),
+  copyIndexToRoot
 ];
 
 export default defineConfig({
