@@ -401,7 +401,7 @@ export default function Home() {
           <div className="grid lg:grid-cols-2 gap-8">
             {/* Left column - Habilidades */}
             <div className="space-y-6">
-              <div className="bg-gradient-to-br from-card/80 to-card/40 backdrop-blur-xl border border-border/50 rounded-2xl p-8 hover:border-primary/30 transition-all">
+              <div className="bg-gradient-to-tl from-cyan-500/20 to-blue-900/40 backdrop-blur-xl border border-border/50 rounded-2xl p-8 hover:border-primary/30 transition-all">
                 <h3 className="text-2xl font-bold text-primary mb-6 flex items-center gap-2">
                   <Layers className="w-6 h-6" />
                   Habilidades
@@ -422,7 +422,7 @@ export default function Home() {
             {/* Right column - Atualmente + Cards */}
             <div className="space-y-6">
               {/* Atualmente Card */}
-              <div className="bg-gradient-to-br from-card/80 to-card/40 backdrop-blur-xl border border-border/50 rounded-2xl p-8 hover:border-primary/30 transition-all">
+              <div className="bg-gradient-to-tl from-cyan-500/20 to-blue-900/40 backdrop-blur-xl border border-border/50 rounded-2xl p-8 hover:border-primary/30 transition-all">
                 <h3 className="text-2xl font-bold text-primary mb-6 flex items-center gap-2">
                   <span className="text-2xl">⚡</span>
                   Atualmente
@@ -458,7 +458,7 @@ export default function Home() {
               {/* Highlights Cards */}
               <div className="grid grid-cols-2 gap-4">
                 {PORTFOLIO.ABOUT_CONTENT.highlights.map((highlight, idx) => (
-                  <div key={idx} className="bg-gradient-to-br from-card/80 to-card/40 backdrop-blur-xl border border-border/50 rounded-2xl p-6 hover:border-primary/30 transition-all">
+                  <div key={idx} className="bg-gradient-to-tl from-cyan-500/20 to-blue-900/40 backdrop-blur-xl border border-border/50 rounded-2xl p-6 hover:border-primary/30 transition-all">
                     <span className="text-3xl mb-3 block">{highlight.icon}</span>
                     <h4 className="font-bold text-lg mb-2">{highlight.title}</h4>
                     <p className="text-sm text-muted-foreground">{highlight.text}</p>
@@ -516,7 +516,7 @@ export default function Home() {
                 </div>
 
                 {/* Content Container */}
-                <div className="flex flex-col p-4 bg-card/50 backdrop-blur-sm">
+                <div className="flex flex-col p-4 bg-gradient-to-tl from-cyan-500/20 to-blue-900/40 backdrop-blur-sm">
                   {/* Title and Description */}
                   <div className="mb-3">
                     <h3 className="text-base font-bold text-foreground mb-1">{project.title}</h3>
@@ -597,7 +597,7 @@ export default function Home() {
                   href={link.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-border/50 bg-gradient-to-br from-card/80 to-card/40 backdrop-blur-sm hover:border-primary/50 transition-all"
+                  className="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-border/50 bg-gradient-to-tl from-cyan-500/20 to-blue-900/40 backdrop-blur-sm hover:border-primary/50 transition-all"
                 >
                   {Icon && <Icon className="w-5 h-5 text-primary" />}
                   <span className="text-sm font-semibold">{link.name}</span>
@@ -624,7 +624,7 @@ export default function Home() {
           animation: "float-up 3s ease-in-out infinite",
         }}
       >
-        <div className="bg-gradient-to-br from-card/80 to-card/40 rounded-2xl p-6 w-80 shadow-2xl border-2 border-primary/30 hover:border-primary/60 transition-all duration-300 hover:shadow-primary/30">
+        <div className="bg-gradient-to-tl from-cyan-500/20 to-blue-900/40 rounded-2xl p-6 w-80 shadow-2xl border-2 border-primary/30 hover:border-primary/60 transition-all duration-300 hover:shadow-primary/30">
           <div className="flex gap-4 mb-4">
             {/* Card Image */}
             <div className="flex-shrink-0">
