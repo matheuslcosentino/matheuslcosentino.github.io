@@ -308,14 +308,14 @@ export default function Home() {
         <div className="container max-w-4xl mx-auto relative z-10 pt-20 md:pt-0">
           {/* Text content - Centered */}
           <div className="space-y-8 text-center flex flex-col items-center">
-            <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold leading-tight">
+            <h1 className="hidden md:block text-6xl md:text-7xl lg:text-8xl font-bold leading-tight">
               Olá, eu sou o{" "}
               <span className="bg-gradient-to-r from-primary via-blue-400 to-primary bg-clip-text text-transparent animate-pulse">
                 {PORTFOLIO.PERSONAL_INFO.name}
               </span>
             </h1>
 
-            <div className="flex flex-wrap gap-4 text-lg text-muted-foreground justify-center">
+            <div className="hidden md:flex flex-wrap gap-4 text-lg text-muted-foreground justify-center">
               <div className="flex items-center gap-2 bg-card/50 backdrop-blur-sm px-4 py-2 rounded-lg border border-border/50">
                 <Gamepad2 className="w-5 h-5 text-primary" />
                 <span>Game Developer</span>
@@ -458,10 +458,10 @@ export default function Home() {
               {/* Highlights Cards */}
               <div className="grid grid-cols-2 gap-4">
                 {PORTFOLIO.ABOUT_CONTENT.highlights.map((highlight, idx) => (
-                  <div key={idx} className="bg-gradient-to-tl from-cyan-500/20 to-blue-900/40 backdrop-blur-xl border border-border/50 rounded-2xl p-6 hover:border-primary/30 transition-all">
-                    <span className="text-3xl mb-3 block">{highlight.icon}</span>
-                    <h4 className="font-bold text-lg mb-2">{highlight.title}</h4>
-                    <p className="text-sm text-muted-foreground">{highlight.text}</p>
+                  <div key={idx} className="bg-gradient-to-tl from-cyan-500/20 to-blue-900/40 backdrop-blur-xl border border-border/50 rounded-2xl p-4 md:p-6 hover:border-primary/30 transition-all">
+                    <span className="text-2xl md:text-3xl mb-2 md:mb-3 block">{highlight.icon}</span>
+                    <h4 className="font-bold text-base md:text-lg mb-1 md:mb-2">{highlight.title}</h4>
+                    <p className="text-xs md:text-sm text-muted-foreground">{highlight.text}</p>
                   </div>
                 ))}
               </div>
