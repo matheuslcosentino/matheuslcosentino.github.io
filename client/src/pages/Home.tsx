@@ -33,12 +33,15 @@ export default function Home() {
 
   // Intersection Observer para animação ao scrollar
   useEffect(() => {
+    const animatedElements = new Set<HTMLElement>();
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) {
+          if (entry.isIntersecting && !animatedElements.has(entry.target as HTMLElement)) {
+            animatedElements.add(entry.target as HTMLElement);
             setVisibleElements((prev) => new Set(prev).add(entry.target.id));
-            // Aplicar animações aos filhos
+            // Aplicar animações aos filhos apenas uma vez
             const children = entry.target.querySelectorAll("div, h2, h3, p, span");
             children.forEach((child, idx) => {
               (child as HTMLElement).style.animation = `slideInUp 0.6s ease-out forwards`;
@@ -587,32 +590,36 @@ export default function Home() {
         }}
       >
         <a
-          href="https://www.youtube.com/@delirium_yt"
+          href={PORTFOLIO.PROJECTS[0].link}
           target="_blank"
           rel="noopener noreferrer"
           className="block"
         >
-          <div className="bg-gradient-to-br from-orange-600 to-red-700 rounded-2xl p-4 w-72 shadow-2xl border border-orange-400/50 hover:shadow-orange-500/50 hover:border-orange-300 transition-all duration-300 hover:scale-105">
+          <div className="bg-gradient-to-br from-card to-card/80 rounded-2xl p-4 w-72 shadow-2xl border border-border/50 hover:shadow-primary/30 hover:border-primary/30 transition-all duration-300 hover:scale-105">
             <div className="flex gap-4">
               {/* Card Image */}
               <div className="flex-shrink-0">
-                <div className="w-20 h-20 rounded-xl bg-gradient-to-br from-yellow-600 to-orange-900 flex items-center justify-center border-2 border-orange-300/50 overflow-hidden">
-                  <div className="text-3xl">🎮</div>
+                <div className="w-20 h-20 rounded-xl bg-gradient-to-br from-primary/30 to-primary/10 flex items-center justify-center border-2 border-primary/30 overflow-hidden">
+                  <img
+                    src={`${import.meta.env.BASE_URL}project1.png`}
+                    alt="Delirium"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
               </div>
 
               {/* Card Content */}
               <div className="flex-1 min-w-0">
                 <div className="flex items-center gap-1 mb-1">
-                  <span className="text-xs font-bold text-orange-200 bg-orange-900/50 px-2 py-1 rounded">Novo</span>
+                  <span className="text-xs font-bold text-primary bg-primary/10 px-2 py-1 rounded">Recomendado</span>
                 </div>
-                <h3 className="text-white font-bold text-sm leading-tight mb-1">
-                  Echoes: Capítulo 1
+                <h3 className="text-foreground font-bold text-sm leading-tight mb-1">
+                  {PORTFOLIO.PROJECTS[0].title}
                 </h3>
-                <p className="text-orange-100 text-xs line-clamp-2 mb-3">
-                  Horror psicológico explorando imersão e narrativa.
+                <p className="text-muted-foreground text-xs line-clamp-2 mb-3">
+                  {PORTFOLIO.PROJECTS[0].description}
                 </p>
-                <div className="flex items-center gap-1 text-orange-200 hover:text-white transition-colors">
+                <div className="flex items-center gap-1 text-primary hover:text-primary/80 transition-colors">
                   <span className="text-xs font-semibold">Jogar Agora</span>
                   <ExternalLink className="w-3 h-3" />
                 </div>
