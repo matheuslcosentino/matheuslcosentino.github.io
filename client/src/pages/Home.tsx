@@ -55,15 +55,26 @@ export default function Home() {
       >
         {/* Animated Gaming Background */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          {/* Animated Elements - Many small scattered */}
-          {Array.from({ length: 30 }).map((_, idx) => {
+          {/* Animated Elements - Grid-based to prevent overlap */}
+          {Array.from({ length: 80 }).map((_, idx) => {
             const emojis = ["🎮", "🕹️", "🎯", "⚡", "🌟", "◆", "★", "◯", "✕", "□", "△", "⬜", "🎲", "🎪", "🔥", "💫", "✨", "🌠"];
             const emoji = emojis[idx % emojis.length];
-            const top = Math.random() * 100;
-            const left = Math.random() * 100;
-            const size = Math.random() * 40 + 20; // 20-60px
-            const delay = Math.random() * 3;
-            const duration = Math.random() * 2 + 4; // 4-6s
+            
+            // Usar grid para distribuir sem sobreposição
+            const cols = 10;
+            const rows = 8;
+            const col = idx % cols;
+            const row = Math.floor(idx / cols);
+            
+            // Calcular posição base com grid + offset aleatório
+            const cellWidth = 100 / cols;
+            const cellHeight = 100 / rows;
+            const top = (row * cellHeight) + Math.random() * (cellHeight - 8);
+            const left = (col * cellWidth) + Math.random() * (cellWidth - 8);
+            
+            const size = Math.random() * 30 + 18; // 18-48px
+            const delay = Math.random() * 4;
+            const duration = Math.random() * 2 + 5; // 5-7s
             
             return (
               <div
@@ -73,10 +84,10 @@ export default function Home() {
                   top: `${top}%`,
                   left: `${left}%`,
                   fontSize: `${size}px`,
-                  opacity: Math.random() * 0.3 + 0.1,
+                  opacity: Math.random() * 0.25 + 0.08,
                   animation: `float ${duration}s ease-in-out infinite`,
                   animationDelay: `${delay}s`,
-                  color: "rgba(6, 182, 212, 0.6)",
+                  color: "rgba(6, 182, 212, 0.5)",
                   userSelect: "none",
                 }}
               >
