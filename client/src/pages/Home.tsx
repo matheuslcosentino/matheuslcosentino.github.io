@@ -385,7 +385,7 @@ export default function Home() {
                 />
               </div>
             </div>
-            <h2 className="text-5xl md:text-6xl font-bold mt-4 mb-4 text-foreground">
+            <h2 className="text-5xl md:text-6xl font-bold mt-4 mb-1 text-foreground">
               {PORTFOLIO.ABOUT_CONTENT.title}
             </h2>
           </div>
