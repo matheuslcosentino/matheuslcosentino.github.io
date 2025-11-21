@@ -33,24 +33,16 @@ export default function Home() {
 
   // Intersection Observer para animação ao scrollar
   useEffect(() => {
-    const animatedElements = new Set<HTMLElement>();
-
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting && !animatedElements.has(entry.target as HTMLElement)) {
-            animatedElements.add(entry.target as HTMLElement);
-            setVisibleElements((prev) => new Set(prev).add(entry.target.id));
-            // Aplicar animações aos filhos apenas uma vez
-            const children = entry.target.querySelectorAll("div, h2, h3, p, span");
-            children.forEach((child, idx) => {
-              (child as HTMLElement).style.animation = `slideInUp 0.6s ease-out forwards`;
-              (child as HTMLElement).style.animationDelay = `${idx * 0.1}s`;
-            });
+          if (entry.isIntersecting) {
+            // Animar apenas o elemento com data-animate como um todo
+            (entry.target as HTMLElement).classList.add("animate-scroll-in");
           }
         });
       },
-      { threshold: 0.1 }
+      { threshold: 0.1, rootMargin: "0px 0px -100px 0px" }
     );
 
     const elements = document.querySelectorAll("[data-animate]");
@@ -295,19 +287,19 @@ export default function Home() {
             }
 
             .animate-scroll-in {
-              animation: slideInUp 0.6s ease-out forwards;
+              animation: slideInUp 0.6s ease-out forwards !important;
             }
 
             .animate-scroll-in-left {
-              animation: slideInLeft 0.6s ease-out forwards;
+              animation: slideInLeft 0.6s ease-out forwards !important;
             }
 
             .animate-scroll-in-right {
-              animation: slideInRight 0.6s ease-out forwards;
+              animation: slideInRight 0.6s ease-out forwards !important;
             }
 
             .animate-scroll-fade {
-              animation: fadeIn 0.6s ease-out forwards;
+              animation: fadeIn 0.6s ease-out forwards !important;
             }
           `}</style>
         </div>
@@ -401,7 +393,7 @@ export default function Home() {
         ref={aboutRef}
         id="about-section"
         data-animate="true"
-        className="min-h-screen flex items-center py-32 px-4 bg-background relative"
+        className="min-h-screen flex items-center py-32 px-4 bg-background relative overflow-hidden"
       >
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/5 to-transparent pointer-events-none" />
 
