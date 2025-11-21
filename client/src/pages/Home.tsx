@@ -515,7 +515,7 @@ export default function Home() {
               >
                 {/* Background Image */}
                 <img
-                  src={`${import.meta.env.BASE_URL}${project.image}`}
+                  src={project.image}
                   alt={project.title}
                   className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                 />
