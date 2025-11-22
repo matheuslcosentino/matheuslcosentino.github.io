@@ -330,7 +330,7 @@ export default function Home() {
               </div>
             </div>
 
-            <p className="text-xl text-muted-foreground leading-relaxed max-w-4xl">
+            <p className="text-xl text-muted-foreground leading-relaxed max-w-3xl">
               {PORTFOLIO.PERSONAL_INFO.subtitle}
             </p>
 
