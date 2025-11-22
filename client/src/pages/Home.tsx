@@ -315,7 +315,7 @@ export default function Home() {
               </span>
             </h1>
 
-            <div className="flex flex-wrap gap-4 text-lg text-muted-foreground justify-center max-w-md">
+            <div className="flex gap-4 text-lg text-muted-foreground justify-center">
               <div className="flex items-center gap-2 bg-card/50 backdrop-blur-sm px-4 py-2 rounded-lg border border-border/50">
                 <Gamepad2 className="w-5 h-5 text-primary" />
                 <span>Game Developer</span>
